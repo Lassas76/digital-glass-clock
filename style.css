@@ -1,0 +1,99 @@
+:root {
+  --bg-light: linear-gradient(135deg, #e0f7fa, #fff);
+  --bg-dark: linear-gradient(135deg, #1e1e2f, #121212);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-dark: rgba(0, 0, 0, 0.3);
+  --text-light: #000;
+  --text-dark: #fff;
+  --accent: #00e5ff;
+  --font-main: 'Raleway', sans-serif;
+  --font-clock: 'Orbitron', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: var(--bg-light);
+  transition: background 0.6s ease;
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.container {
+  padding: 2rem;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  margin: auto;
+  transition: background 0.6s;
+}
+
+body.dark .glass {
+  background: var(--glass-dark);
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.clock .time {
+  font-family: var(--font-clock);
+  font-size: 4rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.3rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.clock .ampm {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.clock .date {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.controls {
+  margin-top: 1rem;
+}
+
+.controls button {
+  padding: 10px 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.controls button:hover {
+  transform: scale(1.05);
+  background: #00bcd4;
+}
+
+@media (max-width: 500px) {
+  .clock .time {
+    font-size: 3rem;
+  }
+}
